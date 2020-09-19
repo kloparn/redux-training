@@ -68,14 +68,14 @@ export function Counter() {
         <button
           className={styles.button}
           onClick={() =>
-            dispatch(decrementByAmount(Number(incrementAmount) || 0))
+            dispatch(decrementByAmount(Number(decrementAmount) || 0))
           }
         >
           Remove Amount
         </button>
         <button
           className={styles.asyncButton}
-          onClick={() => dispatch(decrementAsync(Number(incrementAmount) || 0))}
+          onClick={() => dispatch(decrementAsync(Number(decrementAmount) || 0))}
         >
           Remove Async
         </button>
