@@ -15,7 +15,7 @@ export function Todo() {
         <span className={styles.value}>
           This is a [
           {todos.map((todo) => (
-            <div>{todo.text}</div>
+            <div key={todo.id}>{todo.text}</div>
           ))}
           ] state
           <br></br>
@@ -23,7 +23,12 @@ export function Todo() {
             className={styles.button}
             aria-label="add todo"
             onClick={() =>
-              dispatch(addTodo({ text: "new item", id: Math.random() }))
+              dispatch(
+                addTodo({
+                  text: "new item",
+                  id: Math.floor(Math.random() * 10000),
+                })
+              )
             }
           >
             Add new todo
